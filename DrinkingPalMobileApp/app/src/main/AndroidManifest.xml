@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DrinkingPalMobileApp">
         <activity
+            android:name=".ChooseLanguagePage"
+            android:exported="true" />
+        <activity
+            android:name=".SignUpPage"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Tobi Korta/Documents/GitHub/drinking-pal/DrinkingPalMobileApp/app/src/main/res/layout/activity_choose_language_page.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Tobi Korta/Documents/GitHub/drinking-pal/DrinkingPalMobileApp/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/Tobi Korta/Documents/GitHub/drinking-pal/DrinkingPalMobileApp/app/src/main/res/layout/activity_sign_up_page.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Tobi Korta/Documents/GitHub/drinking-pal/DrinkingPalMobileApp/app/src/main/res/layout/chooseLanguagePage.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Tobi Korta/Documents/GitHub/drinking-pal/DrinkingPalMobileApp/app/src/main/res/layout/first_app_opening.xml" value="0.1" />
+        <entry key="..\:/Users/Tobi Korta/Documents/GitHub/drinking-pal/DrinkingPalMobileApp/app/src/main/res/layout/signUpPage.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Tobi Korta/Documents/GitHub/drinking-pal/DrinkingPalMobileApp/app/src/main/res/layout/sign_up_page.xml" value="0.12771739130434784" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

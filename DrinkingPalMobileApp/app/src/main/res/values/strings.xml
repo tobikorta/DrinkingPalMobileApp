@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">DrinkingPalMobileApp</string>
+    <string-array name="chooseLanguageSpinner">
+        <item>Hello World</item>
+        <item>C° in K</item>
+        <item>F° in C°</item>
+        <item>F° in K°</item>
+        <item>K in C°</item>
+        <item>K in F°</item>
+    </string-array>
 </resources>
