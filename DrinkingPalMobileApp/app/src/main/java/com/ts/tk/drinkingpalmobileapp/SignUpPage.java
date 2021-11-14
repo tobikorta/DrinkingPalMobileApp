@@ -10,19 +10,20 @@ import android.widget.EditText;
 
 public class SignUpPage extends AppCompatActivity {
 
-    private Button button;
+    private Button buttonOpenChooseLanguagePage;
     EditText inputFirstName;
     EditText inputLastName;
     EditText inputEmail;
     EditText inputPassword;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sign_up_page);
 
-        button = findViewById(R.id.btnContinueToChooseLanguage);
-        button.setOnClickListener(new View.OnClickListener(){
+        buttonOpenChooseLanguagePage = findViewById(R.id.btnContinueToChooseLanguage);
+        buttonOpenChooseLanguagePage.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View view) {
