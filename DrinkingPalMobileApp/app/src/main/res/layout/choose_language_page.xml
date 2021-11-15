@@ -92,7 +92,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btnChooseLanguageSpanish" />
 
     <Button
-        android:id="@+id/btnContinueToChooseLanguage"
+        android:id="@+id/btnContinueToFinishSignUp"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginTop="35dp"

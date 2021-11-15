@@ -22,6 +22,7 @@ private Button buttonOpenSignUpPage;
 
             @Override
             public void onClick(View view) {
+
                 openSignUpPage();
             }
         });
