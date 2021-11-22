@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChooseLanguagePage">
+    tools:context="ChooseLanguagePage">
 
     <ImageView
         android:id="@+id/imageView"
@@ -17,7 +18,7 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <Spinner
-        android:id="@+id/spnSearchForLanguage"
+        android:id="@+id/spnSearchForLanguageOne"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginTop="116dp"
@@ -26,80 +27,37 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-    <Button
-        android:id="@+id/btnChooseLanguageEnglish"
-        android:layout_width="140dp"
+    <Spinner
+        android:id="@+id/spnSearchForLanguageTwo"
+        android:layout_width="250dp"
         android:layout_height="50dp"
-        android:layout_marginTop="35dp"
-        android:text="english"
-        app:layout_constraintEnd_toStartOf="@+id/btnChooseLanguageGerman"
-        app:layout_constraintHorizontal_bias="0.633"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spnSearchForLanguage" />
-
-    <Button
-        android:id="@+id/btnChooseLanguageGerman"
-        android:layout_width="140dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="52dp"
-        android:text="german"
+        android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spnSearchForLanguage" />
-
-    <Button
-        android:id="@+id/btnChooseLanguageSpanish"
-        android:layout_width="140dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="35dp"
-        android:text="Spanish"
-        app:layout_constraintEnd_toStartOf="@+id/btnChooseLanguageFrench"
-        app:layout_constraintHorizontal_bias="0.632"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnChooseLanguageEnglish" />
+        app:layout_constraintTop_toBottomOf="@+id/spnSearchForLanguageOne" />
 
-    <Button
-        android:id="@+id/btnChooseLanguageFrench"
-        android:layout_width="140dp"
+    <Spinner
+        android:id="@+id/spnSearchForLanguageThree"
+        android:layout_width="250dp"
         android:layout_height="50dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="52dp"
-        android:text="french"
+        android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnChooseLanguageGerman" />
-
-    <Button
-        android:id="@+id/btnChooseLanguageMandarin"
-        android:layout_width="140dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="52dp"
-        android:text="mandarin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnChooseLanguageFrench" />
-
-
-    <Button
-        android:id="@+id/btnChooseLanguagePortuguese"
-        android:layout_width="140dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="35dp"
-        android:text="portuguese"
-        app:layout_constraintEnd_toStartOf="@+id/btnChooseLanguageFrench"
-        app:layout_constraintHorizontal_bias="0.633"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="484dp"
-        app:layout_constraintTop_toBottomOf="@+id/btnChooseLanguageSpanish" />
+        app:layout_constraintTop_toBottomOf="@+id/spnSearchForLanguageTwo" />
+
 
     <Button
         android:id="@+id/btnContinueToFinishSignUp"
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:layout_marginTop="35dp"
-        android:text="continue"
+        android:layout_marginTop="50dp"
+        android:hint="@string/goON"
+        android:onClick="makeToast"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnChooseLanguagePortuguese" />
+        app:layout_constraintTop_toBottomOf="@+id/spnSearchForLanguageThree" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
