@@ -11,13 +11,16 @@
         android:theme="@style/Theme.DrinkingPalMobileApp">
         <activity
             android:name=".ChooseLanguagePage"
-            android:exported="true" />
+            android:parentActivityName=".SignUpPage" />
         <activity
             android:name=".SignUpPage"
-            android:exported="true" />
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".HomeScreen"
+            />
         <activity
             android:name=".MainActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
