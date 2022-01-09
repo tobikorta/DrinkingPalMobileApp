@@ -7,14 +7,12 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
+import java.util.Objects;
+
 public class ChooseLanguagePage extends SupportExtensions
         implements AdapterView.OnItemSelectedListener {
 
-    private Spinner spnSearchForLanguageOne;
-    private Spinner spnSearchForLanguageTwo;
-    private Spinner spnSearchForLanguageThree;
-
-    private Button buttonContinueToHomeScreen;
+    private Spinner spnSearchForLanguage;
 
     private String chooseFirstLanguage;
     private String chooseSecondLanguage;
@@ -27,10 +25,10 @@ public class ChooseLanguagePage extends SupportExtensions
         setContentView(R.layout.choose_language_page);
 
 
-        getSupportActionBar().setTitle("ChooseLanguage");
+        Objects.requireNonNull(getSupportActionBar()).setTitle("ChooseLanguage");
         upArrow();
 
-        buttonContinueToHomeScreen = findViewById(R.id.btnContinueToHomeScreen);
+        Button buttonContinueToHomeScreen = findViewById(R.id.btnContinueToHomeScreen);
         buttonContinueToHomeScreen.setOnClickListener(view -> {
 
             openHomeScreen();
@@ -38,8 +36,6 @@ public class ChooseLanguagePage extends SupportExtensions
         });
 
         Spinner spinnerOne = (Spinner) findViewById(R.id.spnSearchForLanguageOne);
-        Spinner spinnerTwo = (Spinner) findViewById(R.id.spnSearchForLanguageTwo);
-        Spinner spinnerThree = (Spinner) findViewById(R.id.spnSearchForLanguageThree);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.chooseLanguageSpinner, android.R.layout.simple_spinner_item);
@@ -47,19 +43,13 @@ public class ChooseLanguagePage extends SupportExtensions
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         spinnerOne.setAdapter(adapter);
-        spinnerTwo.setAdapter(adapter);
-        spinnerThree.setAdapter(adapter);
-
-
     }
 
 
     @Override
     public void onItemSelected(AdapterView<?> adapter, View view, int position, long id) {
 
-        chooseFirstLanguage = spnSearchForLanguageOne.getSelectedItem().toString();
-        chooseSecondLanguage = spnSearchForLanguageTwo.getSelectedItem().toString();
-        chooseThirdLanguage = spnSearchForLanguageThree.getSelectedItem().toString();
+        chooseFirstLanguage = spnSearchForLanguage.getSelectedItem().toString();
     }
 
     @Override

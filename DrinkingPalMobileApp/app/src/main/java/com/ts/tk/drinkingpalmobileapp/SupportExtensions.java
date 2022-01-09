@@ -37,5 +37,35 @@ public class SupportExtensions extends AppCompatActivity {
         startActivity(intentOpenHomeScreen);
     }
 
+    public void openProfileDashboard() {
+        Intent intentOpenProfileDashboard = new Intent(this, ProfileDashboard.class);
+        startActivity(intentOpenProfileDashboard);
+    }
+
+    public void openEvents(){
+        Intent intentOpenEvents = new Intent(this, Events.class);
+        startActivity(intentOpenEvents);
+    }
+
+    public void openMessages(){
+        Intent intentOpenMessages = new Intent(this, Messages.class);
+        startActivity(intentOpenMessages);
+    }
+
+    public void openFavouriteBars(){
+        Intent intentOpenFavouriteBars = new Intent(this, FavouriteBars.class);
+        startActivity(intentOpenFavouriteBars);
+    }
+
+    public void openStatsHistory(){
+        Intent intentOpenStatsHistory = new Intent(this, StatsHistory.class);
+        startActivity(intentOpenStatsHistory);
+    }
+
+    public void openProfileEdit(){
+        Intent intentOpenProfileEdit = new Intent(this, ProfileEdit.class);
+        startActivity(intentOpenProfileEdit);
+    }
+
 }
 

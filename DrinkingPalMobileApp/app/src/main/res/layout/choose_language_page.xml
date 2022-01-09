@@ -27,36 +27,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-    <Spinner
-        android:id="@+id/spnSearchForLanguageTwo"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spnSearchForLanguageOne" />
-
-    <Spinner
-        android:id="@+id/spnSearchForLanguageThree"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spnSearchForLanguageTwo" />
-
 
     <Button
         android:id="@+id/btnContinueToHomeScreen"
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:layout_marginTop="50dp"
         android:hint="@string/goON"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spnSearchForLanguageThree" />
+        tools:layout_editor_absoluteY="604dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,9 +4,9 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class SignUpPage extends SupportExtensions {
+import java.util.Objects;
 
-    private Button buttonContinueToChooseLanguage;
+public class SignUpPage extends SupportExtensions {
 
     EditText inputFirstName;
     EditText inputLastName;
@@ -19,10 +19,10 @@ public class SignUpPage extends SupportExtensions {
         setContentView(R.layout.sign_up_page);
 
 
-        getSupportActionBar().setTitle("SignUpPage");
+        Objects.requireNonNull(getSupportActionBar()).setTitle("SignUpPage");
         upArrow();
 
-        buttonContinueToChooseLanguage = findViewById(R.id.btnContinueToChooseLanguage);
+        Button buttonContinueToChooseLanguage = findViewById(R.id.btnContinueToChooseLanguage);
         buttonContinueToChooseLanguage.setOnClickListener(view -> {
 
             openChooseLanguagePage();
