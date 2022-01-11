@@ -7,16 +7,13 @@ import android.widget.Button;
 
 public class MainActivity extends SupportExtensions {
 
-    private Button buttonOpenSignUpPage;
-    private Button buttonContinueWithGoogle;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.first_app_opening);
 
-        buttonOpenSignUpPage = findViewById(R.id.btnContinueToSignUpPage);
-        buttonContinueWithGoogle = findViewById(R.id.btnContinueWithGoogle);
+        Button buttonOpenSignUpPage = findViewById(R.id.btnContinueToSignUpPage);
+        Button buttonContinueWithGoogle = findViewById(R.id.btnContinueWithGoogle);
 
         buttonOpenSignUpPage.setOnClickListener(view -> openSignUpPage());
 
