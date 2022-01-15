@@ -1,14 +1,24 @@
 package com.ts.tk.drinkingpalmobileapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+
+public class MainActivity extends SupportExtensions {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.first_app_opening);
+
+        Button buttonOpenSignUpPage = findViewById(R.id.btnContinueToSignUpPage);
+        Button buttonContinueWithGoogle = findViewById(R.id.btnContinueWithGoogle);
+
+        buttonOpenSignUpPage.setOnClickListener(view -> openSignUpPage());
+
+        buttonContinueWithGoogle.setOnClickListener(view -> {
+
+        });
     }
 }
