@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -32,6 +33,9 @@ public class User {
     private String password;
 
     @Enumerated(EnumType.STRING)
+    private Role role;
+
+    @Enumerated(EnumType.STRING)
     private SubscriptionType subscriptionType;
     @CreatedDate
     private LocalDate joiningDate;
@@ -40,7 +44,6 @@ public class User {
     @ManyToMany()
     @JoinTable(name = "user_spoken_languages")
     private Set<Language> spokenLanguages = new HashSet<>();
-
 
     @Override
     public boolean equals(Object o) {
@@ -61,5 +64,14 @@ public class User {
 
     public enum AccountState {
         CLOSED, NEW, VALIDATED
+    }
+
+    public enum Role implements GrantedAuthority {
+        USER;
+
+        @Override
+        public String getAuthority() {
+            return name();
+        }
     }
 }
