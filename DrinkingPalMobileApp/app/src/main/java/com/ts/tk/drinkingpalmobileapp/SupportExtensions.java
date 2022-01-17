@@ -2,6 +2,8 @@ package com.ts.tk.drinkingpalmobileapp;
 /*
     Database docu AndroidStudio
     https://developer.android.com/training/data-storage/room#java
+    INTENTS
+    VOLLEY
  */
 import android.content.Context;
 import android.content.Intent;
