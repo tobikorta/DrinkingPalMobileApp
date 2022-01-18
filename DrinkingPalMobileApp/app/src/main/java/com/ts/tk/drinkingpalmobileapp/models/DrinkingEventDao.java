@@ -7,6 +7,6 @@ import java.util.List;
 
 @Dao
 public interface DrinkingEventDao {
-    @Query("SELECT * FROM DrinkingEvent")
-    List<DrinkingEvent> getAll();
+    @Query("SELECT * FROM user")
+    List<User> getAll();
 }

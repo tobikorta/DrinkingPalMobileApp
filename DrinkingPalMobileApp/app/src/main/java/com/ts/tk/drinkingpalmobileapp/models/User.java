@@ -17,10 +17,10 @@ import lombok.Setter;
 public class User {
 
     @PrimaryKey
-    private int id;
+    public int id;
 
     @ColumnInfo(name = "Name")
-    private String name;
+    public String name;
 
     @Builder
     public User(int id, String name) {

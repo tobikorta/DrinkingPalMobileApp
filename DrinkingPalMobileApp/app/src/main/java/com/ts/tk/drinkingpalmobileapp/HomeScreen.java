@@ -5,6 +5,9 @@ import android.widget.Button;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Room;
+
+import com.ts.tk.drinkingpalmobileapp.models.AppDatabase;
 
 import java.util.Objects;
 
@@ -14,7 +17,7 @@ public class HomeScreen extends SupportExtensions {
     RecyclerView recyclerView;
 
     String s1[], s2[];
-    int images[] = {R.drawable.bildMvvParis};
+    int images[] = {R.drawable.bild_mvv_paris};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +40,8 @@ public class HomeScreen extends SupportExtensions {
         RecViewBarsAdapter recViewBarsAdapter = new RecViewBarsAdapter(this, s1, s2, images);
         recyclerView.setAdapter(recViewBarsAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        AppDatabase db = Room.databaseBuilder(getApplicationContext(),AppDatabase.class, "Database 1").build();
     }
 
 
