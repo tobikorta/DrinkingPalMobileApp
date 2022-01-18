@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.recyclerview.widget.RecyclerView;
+
 
 public class MainActivity extends SupportExtensions {
 
@@ -20,5 +22,7 @@ public class MainActivity extends SupportExtensions {
         buttonContinueWithGoogle.setOnClickListener(view -> {
 
         });
+
+
     }
 }

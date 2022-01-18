@@ -22,7 +22,7 @@ public class DrinkingEvent {
     private int id;
 
     @ColumnInfo(name = "creator")
-    private User creator;
+    private User name;
 
     @ColumnInfo(name = "date")
     private LocalDateTime date;
@@ -31,9 +31,9 @@ public class DrinkingEvent {
     private Location location;
 
     @Builder
-    public DrinkingEvent(int id, User creator, LocalDateTime date, Location location) {
+    public DrinkingEvent(int id, User name, LocalDateTime date, Location location) {
         this.id = id;
-        this.creator = creator;
+        this.name = name;
         this.date = date;
         this.location = location;
     }

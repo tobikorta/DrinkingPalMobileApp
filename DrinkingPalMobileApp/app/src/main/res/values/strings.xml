@@ -1,4 +1,8 @@
 <resources>
+
+    <string-array name="title_bar">Title of BAR</string-array>
+    <string-array name="description">Description</string-array>
+
     <string name="app_name">drinkingPalApp</string>
 
     <string name="first_name">first name</string>
