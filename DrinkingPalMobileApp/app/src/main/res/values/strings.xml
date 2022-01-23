@@ -1,7 +1,11 @@
 <resources>
 
-    <string-array name="title_bar">Title of BAR</string-array>
-    <string-array name="description">Description</string-array>
+    <string-array name="title_bar">
+        <item>Title of BAR</item>
+    </string-array>
+    <string-array name="description">
+        <item>Description</item>
+    </string-array>
 
     <string name="app_name">drinkingPalApp</string>
 

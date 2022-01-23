@@ -1,10 +1,10 @@
 package com.ts.tk.drinkingpalmobileapp.models;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -12,19 +12,19 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-@Entity
 
+@Entity(tableName = "User")
 public class User {
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
+    @NonNull
+    @ColumnInfo(name ="user_id")
     public int id;
 
-    @ColumnInfo(name = "Name")
-    public String name;
+    @ColumnInfo(name = "username")
+    public String username;
 
-    @Builder
-    public User(int id, String name) {
-        this.id = id;
-        this.name = name;
+    public User(String username){
+        this.username = username;
     }
 }

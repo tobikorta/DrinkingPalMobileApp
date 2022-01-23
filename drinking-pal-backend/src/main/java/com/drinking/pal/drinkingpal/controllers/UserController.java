@@ -1,5 +1,7 @@
 package com.drinking.pal.drinkingpal.controllers;
 
+import com.drinking.pal.drinkingpal.config.security.JwtTokenProvider;
+import com.drinking.pal.drinkingpal.dto.Value;
 import com.drinking.pal.drinkingpal.entities.User;
 import com.drinking.pal.drinkingpal.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -16,10 +18,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 
     private final UserService userService;
+    private final JwtTokenProvider tokenProvider;
 
     @PostMapping
     public ResponseEntity<?> createAccount(@RequestBody User user) {
         userService.createAccount(user);
-        return new ResponseEntity<>(HttpStatus.CREATED);
+        String token = tokenProvider.createToken(user.getEmail(), user.getRole());
+        return new ResponseEntity<>(new Value<>(token), HttpStatus.CREATED);
     }
 }

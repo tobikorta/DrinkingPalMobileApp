@@ -15,7 +15,6 @@ public class UserService {
     @Transactional
     public void createAccount(User user) {
         user.setSubscriptionType(User.SubscriptionType.MANUAL);
-        //TODO needs to change after implementing the send email on subscription
         user.setStatus(User.AccountState.VALIDATED);
         user.setRole(User.Role.USER);
         repository.save(user);

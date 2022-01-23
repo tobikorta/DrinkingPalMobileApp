@@ -1,22 +1,19 @@
-package com.drinking.pal.drinkingpal.entities;
+package com.ts.tk.drinkingpalmobileapp.dtos;
+
+import java.util.Objects;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
-import javax.persistence.*;
-import java.util.Objects;
-
-@Entity
 @Getter
 @Setter
 @NoArgsConstructor
+@ToString
 public class Language {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "name", nullable = false, unique = true)
     private String name;
 
 

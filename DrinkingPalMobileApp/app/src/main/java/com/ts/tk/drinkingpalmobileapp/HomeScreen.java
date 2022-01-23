@@ -7,7 +7,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 
-import com.ts.tk.drinkingpalmobileapp.models.AppDatabase;
+import com.ts.tk.drinkingpalmobileapp.models.AppRoomDatabase;
+import com.ts.tk.drinkingpalmobileapp.models.RecViewBarsAdapter;
 
 import java.util.Objects;
 
@@ -28,7 +29,6 @@ public class HomeScreen extends SupportExtensions {
 
         Button buttonContinueToDashboard = findViewById(R.id.btnProfileDashboard);
         buttonContinueToDashboard.setOnClickListener(view -> {
-
             openProfileDashboard();
         });
 
@@ -41,7 +41,7 @@ public class HomeScreen extends SupportExtensions {
         recyclerView.setAdapter(recViewBarsAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        AppDatabase db = Room.databaseBuilder(getApplicationContext(),AppDatabase.class, "Database 1").build();
+        AppRoomDatabase db = Room.databaseBuilder(getApplicationContext(), AppRoomDatabase.class, "Database 1").build();
     }
 
 
