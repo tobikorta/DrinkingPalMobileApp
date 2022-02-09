@@ -2,13 +2,11 @@ package com.ts.tk.drinkingpalmobileapp.restServices;
 
 import com.android.volley.Request;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.ts.tk.drinkingpalmobileapp.SupportExtensions;
+import com.ts.tk.drinkingpalmobileapp.activities.SupportExtensions;
 import com.ts.tk.drinkingpalmobileapp.dtos.UserDto;
 import com.ts.tk.drinkingpalmobileapp.dtos.Value;
 
 import org.json.JSONObject;
-
-import lombok.AllArgsConstructor;
 
 public class UserService {
 

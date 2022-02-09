@@ -1,4 +1,4 @@
-package com.ts.tk.drinkingpalmobileapp;
+package com.ts.tk.drinkingpalmobileapp.activities;
 
 import android.os.Bundle;
 import android.widget.Button;
@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 
+import com.ts.tk.drinkingpalmobileapp.R;
 import com.ts.tk.drinkingpalmobileapp.models.AppRoomDatabase;
 import com.ts.tk.drinkingpalmobileapp.models.RecViewBarsAdapter;
 

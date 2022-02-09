@@ -1,4 +1,4 @@
-package com.ts.tk.drinkingpalmobileapp;
+package com.ts.tk.drinkingpalmobileapp.activities;
 /*
     Database docu AndroidStudio
     https://developer.android.com/training/data-storage/room#java
@@ -11,6 +11,16 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.ts.tk.drinkingpalmobileapp.activities.ChooseLanguagePage;
+import com.ts.tk.drinkingpalmobileapp.activities.Events;
+import com.ts.tk.drinkingpalmobileapp.activities.FavouriteBars;
+import com.ts.tk.drinkingpalmobileapp.activities.HomeScreen;
+import com.ts.tk.drinkingpalmobileapp.activities.Messages;
+import com.ts.tk.drinkingpalmobileapp.activities.ProfileDashboard;
+import com.ts.tk.drinkingpalmobileapp.activities.ProfileEdit;
+import com.ts.tk.drinkingpalmobileapp.activities.SignUpPage;
+import com.ts.tk.drinkingpalmobileapp.activities.StatsHistory;
 
 public class SupportExtensions extends AppCompatActivity {
 
@@ -32,8 +42,13 @@ public class SupportExtensions extends AppCompatActivity {
         startActivity(intentOpenSignUpPage);
     }
 
-    public void openChooseLanguagePage() {
+    public void openChooseLanguagePage(String fName, String lName, String email, String password) {
         Intent intentOpenChooseLanguagePage = new Intent(this, ChooseLanguagePage.class);
+        intentOpenChooseLanguagePage
+                .putExtra("FNAME", fName)
+                .putExtra("LNAME", lName)
+                .putExtra("EMAIL", email)
+                .putExtra("PASSWORD", password);
         startActivity(intentOpenChooseLanguagePage);
     }
 

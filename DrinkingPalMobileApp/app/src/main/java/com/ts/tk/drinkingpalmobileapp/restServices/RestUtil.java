@@ -5,7 +5,7 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.ts.tk.drinkingpalmobileapp.SupportExtensions;
+import com.ts.tk.drinkingpalmobileapp.activities.SupportExtensions;
 
 import org.json.JSONObject;
 

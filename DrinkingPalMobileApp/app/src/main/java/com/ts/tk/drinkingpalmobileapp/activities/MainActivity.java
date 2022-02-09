@@ -1,11 +1,10 @@
-package com.ts.tk.drinkingpalmobileapp;
+package com.ts.tk.drinkingpalmobileapp.activities;
 
 import android.os.Bundle;
 import android.widget.Button;
 
-import com.ts.tk.drinkingpalmobileapp.dtos.UserDto;
+import com.ts.tk.drinkingpalmobileapp.R;
 import com.ts.tk.drinkingpalmobileapp.restServices.LanguageService;
-import com.ts.tk.drinkingpalmobileapp.restServices.UserService;
 
 
 public class MainActivity extends SupportExtensions {

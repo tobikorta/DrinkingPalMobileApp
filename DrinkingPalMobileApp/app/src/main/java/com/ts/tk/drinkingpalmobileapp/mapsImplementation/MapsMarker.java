@@ -17,10 +17,12 @@ public class MapsMarker extends AppCompatActivity implements OnMapReadyCallback 
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.maps_activity);
+        SupportMapFragment mapFragment = SupportMapFragment.newInstance();
+        getSupportFragmentManager().beginTransaction().add(R.id.mapView, mapFragment).commit();
 
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
     }
+
+
 
     @Override
     public void onMapReady(GoogleMap googleMap) {

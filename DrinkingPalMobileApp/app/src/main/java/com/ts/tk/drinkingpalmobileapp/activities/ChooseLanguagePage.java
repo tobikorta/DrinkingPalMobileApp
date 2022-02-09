@@ -1,4 +1,4 @@
-package com.ts.tk.drinkingpalmobileapp;
+package com.ts.tk.drinkingpalmobileapp.activities;
 
 import android.os.Bundle;
 import android.view.View;
@@ -6,6 +6,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+
+import com.ts.tk.drinkingpalmobileapp.R;
 
 import java.util.Objects;
 
@@ -22,11 +24,23 @@ public class ChooseLanguagePage extends SupportExtensions
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.choose_language_page);
+        setContentView(R.layout.activity_language_page);
 
 
         Objects.requireNonNull(getSupportActionBar()).setTitle("ChooseLanguage");
         upArrow();
+
+        Bundle bundle = getIntent().getExtras();
+        if(bundle != null){
+            String fName = bundle.getString("FNAME");
+            String lName = bundle.getString("LNAME");
+            String email = bundle.getString("EMAIL");
+            String password = bundle.getString("PASSWORD");
+
+            System.out.println(fName + lName + email + password);
+        }
+
+
 
         Button buttonContinueToHomeScreen = findViewById(R.id.btnContinueToHomeScreen);
         buttonContinueToHomeScreen.setOnClickListener(view -> {
