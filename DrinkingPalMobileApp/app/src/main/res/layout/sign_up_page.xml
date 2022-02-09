@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="SignUpPage">
+    tools:context=".activities.SignUpPage">
 
 
     <ImageView
@@ -26,7 +26,7 @@
             android:hint="@string/first_name"
             android:textAlignment="center"
             android:labelFor="@+id/inputFirstName"
-        android:inputType="text"
+            android:inputType="text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
