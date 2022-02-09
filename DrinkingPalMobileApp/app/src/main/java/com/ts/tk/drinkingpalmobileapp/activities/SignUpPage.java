@@ -20,23 +20,21 @@ public class SignUpPage extends SupportExtensions {
         upArrow();
 
         EditText inputFirstName = findViewById(R.id.inputFirstName);
-        String firstName = inputFirstName.getText().toString();
         EditText inputLastName = findViewById(R.id.inputLastName);
-        String lastName = inputLastName.getText().toString();
         EditText inputEmail = findViewById(R.id.inputEmail);
-        String email = inputEmail.getText().toString();
         EditText inputPassword = findViewById(R.id.inputPassword);
-        String password = inputPassword.getText().toString();
 
         Button buttonContinueToChooseLanguage = findViewById(R.id.btnContinueToChooseLanguage);
         buttonContinueToChooseLanguage.setOnClickListener(view -> {
+            String firstName = inputFirstName.getText().toString();
+            String lastName = inputLastName.getText().toString();
+            String email = inputEmail.getText().toString();
+            String password = inputPassword.getText().toString();
 
             openChooseLanguagePage(firstName, lastName, email, password);
             autoKeyboardRemover();
         });
 
-
     }
-
 
 }

@@ -11,14 +11,12 @@ import com.ts.tk.drinkingpalmobileapp.R;
 
 import java.util.Objects;
 
-public class ChooseLanguagePage extends SupportExtensions
-        implements AdapterView.OnItemSelectedListener {
+public class ChooseLanguagePage extends SupportExtensions implements AdapterView.OnItemSelectedListener{
 
     private Spinner spnSearchForLanguage;
 
-    private String chooseFirstLanguage;
-    private String chooseSecondLanguage;
-    private String chooseThirdLanguage;
+    private Object chooseFirstLanguage;
+    private Object userInfo;
 
 
     @Override
@@ -30,26 +28,7 @@ public class ChooseLanguagePage extends SupportExtensions
         Objects.requireNonNull(getSupportActionBar()).setTitle("ChooseLanguage");
         upArrow();
 
-        Bundle bundle = getIntent().getExtras();
-        if(bundle != null){
-            String fName = bundle.getString("FNAME");
-            String lName = bundle.getString("LNAME");
-            String email = bundle.getString("EMAIL");
-            String password = bundle.getString("PASSWORD");
-
-            System.out.println(fName + lName + email + password);
-        }
-
-
-
-        Button buttonContinueToHomeScreen = findViewById(R.id.btnContinueToHomeScreen);
-        buttonContinueToHomeScreen.setOnClickListener(view -> {
-
-            openHomeScreen();
-            autoKeyboardRemover();
-        });
-
-        Spinner spinnerOne = (Spinner) findViewById(R.id.spnSearchForLanguageOne);
+        Spinner spinnerOne = findViewById(R.id.spnSearchForLanguageOne);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.chooseLanguageSpinner, android.R.layout.simple_spinner_item);
@@ -57,19 +36,46 @@ public class ChooseLanguagePage extends SupportExtensions
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         spinnerOne.setAdapter(adapter);
+
+        Button buttonContinueToHomeScreen = findViewById(R.id.btnContinueToHomeScreen);
+        buttonContinueToHomeScreen.setOnClickListener(view -> {
+
+            Bundle bundle = getIntent().getExtras();
+            if(bundle != null){
+                String fName = bundle.getString("FNAME");
+                String lName = bundle.getString("LNAME");
+                String email = bundle.getString("EMAIL");
+                String password = bundle.getString("PASSWORD");
+
+                spinnerOne.setOnItemSelectedListener(this);
+                String language = spinnerOne.getSelectedItem().toString();
+
+                //System.out.println(fName + lName + email + password);
+                //System.out.println(test);
+
+                userInfo = fName + lName + email + password + language;
+                //System.out.println(userInfo);
+
+            }
+
+            openHomeScreen();
+            autoKeyboardRemover();
+
+        });
+
     }
 
+        @Override
+        public void onItemSelected(AdapterView<?> adapter, View view, int position, long id) {
 
-    @Override
-    public void onItemSelected(AdapterView<?> adapter, View view, int position, long id) {
+            chooseFirstLanguage = adapter.getItemAtPosition(position);
+        }
 
-        chooseFirstLanguage = spnSearchForLanguage.getSelectedItem().toString();
+        @Override
+        public void onNothingSelected(AdapterView<?> adapterView) {
+
     }
 
-    @Override
-    public void onNothingSelected(AdapterView<?> adapterView) {
-
-    }
 }
 
 
