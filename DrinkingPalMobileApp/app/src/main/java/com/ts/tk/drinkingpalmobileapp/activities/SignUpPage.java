@@ -5,10 +5,13 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.ts.tk.drinkingpalmobileapp.R;
+import com.ts.tk.drinkingpalmobileapp.dtos.UserDto;
+import com.ts.tk.drinkingpalmobileapp.restServices.UserService;
 
 import java.util.Objects;
 
 public class SignUpPage extends SupportExtensions {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +29,7 @@ public class SignUpPage extends SupportExtensions {
 
         Button buttonContinueToChooseLanguage = findViewById(R.id.btnContinueToChooseLanguage);
         buttonContinueToChooseLanguage.setOnClickListener(view -> {
+
             String firstName = inputFirstName.getText().toString();
             String lastName = inputLastName.getText().toString();
             String email = inputEmail.getText().toString();

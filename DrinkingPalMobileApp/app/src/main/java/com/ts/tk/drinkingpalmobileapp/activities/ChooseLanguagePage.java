@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.Spinner;
 
 import com.ts.tk.drinkingpalmobileapp.R;
+import com.ts.tk.drinkingpalmobileapp.dtos.UserDto;
+import com.ts.tk.drinkingpalmobileapp.restServices.UserService;
 
 import java.util.Objects;
 
@@ -18,6 +20,11 @@ public class ChooseLanguagePage extends SupportExtensions implements AdapterView
     private Object chooseFirstLanguage;
     private Object userInfo;
 
+    private UserService userService;
+
+    public ChooseLanguagePage() {
+        userService = new UserService(this);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,18 +49,23 @@ public class ChooseLanguagePage extends SupportExtensions implements AdapterView
 
             Bundle bundle = getIntent().getExtras();
             if(bundle != null){
-                String fName = bundle.getString("FNAME");
-                String lName = bundle.getString("LNAME");
+                String firstName = bundle.getString("FNAME");
+                String lastName = bundle.getString("LNAME");
                 String email = bundle.getString("EMAIL");
                 String password = bundle.getString("PASSWORD");
 
                 spinnerOne.setOnItemSelectedListener(this);
                 String language = spinnerOne.getSelectedItem().toString();
 
-                //System.out.println(fName + lName + email + password);
-                //System.out.println(test);
+                UserDto user = UserDto.builder().firstName(firstName)
+                        .lastName(lastName)
+                        .email(email)
+                        .password(password)
+                        .build();
 
-                userInfo = fName + lName + email + password + language;
+                userService.createUserAccount(user);
+
+                userInfo = firstName + lastName + email + password + language;
                 //System.out.println(userInfo);
 
             }

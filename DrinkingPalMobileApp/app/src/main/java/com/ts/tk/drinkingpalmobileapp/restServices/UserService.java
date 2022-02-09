@@ -12,12 +12,8 @@ public class UserService {
 
     private final SupportExtensions activity;
 
-    private UserService(SupportExtensions activity) {
+    public UserService(SupportExtensions activity) {
         this.activity = activity;
-    }
-
-    public static UserService getInstance(SupportExtensions supportExtensions) {
-        return new UserService(supportExtensions);
     }
 
     public void createUserAccount(UserDto user) {
