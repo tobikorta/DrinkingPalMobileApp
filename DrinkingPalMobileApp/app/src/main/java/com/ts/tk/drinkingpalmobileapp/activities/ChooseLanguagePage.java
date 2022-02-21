@@ -47,15 +47,19 @@ public class ChooseLanguagePage extends SupportExtensions implements AdapterView
         Button buttonContinueToHomeScreen = findViewById(R.id.btnContinueToHomeScreen);
         buttonContinueToHomeScreen.setOnClickListener(view -> {
 
+
             Bundle bundle = getIntent().getExtras();
             if(bundle != null){
+                spinnerOne.setOnItemSelectedListener(this);
+                String language = spinnerOne.getSelectedItem().toString();
+
                 String firstName = bundle.getString("FNAME");
                 String lastName = bundle.getString("LNAME");
                 String email = bundle.getString("EMAIL");
                 String password = bundle.getString("PASSWORD");
+                language = bundle.getString("");
 
-                spinnerOne.setOnItemSelectedListener(this);
-                String language = spinnerOne.getSelectedItem().toString();
+
 
                 UserDto user = UserDto.builder().firstName(firstName)
                         .lastName(lastName)
@@ -65,13 +69,12 @@ public class ChooseLanguagePage extends SupportExtensions implements AdapterView
 
                 userService.createUserAccount(user);
 
-                userInfo = firstName + lastName + email + password + language;
+                userInfo = firstName + lastName + email + password;
                 //System.out.println(userInfo);
 
+                openHomeScreen(email, password);
+                autoKeyboardRemover();
             }
-
-            openHomeScreen();
-            autoKeyboardRemover();
 
         });
 

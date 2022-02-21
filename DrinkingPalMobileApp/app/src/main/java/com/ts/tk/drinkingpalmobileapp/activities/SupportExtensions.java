@@ -42,6 +42,11 @@ public class SupportExtensions extends AppCompatActivity {
         startActivity(intentOpenSignUpPage);
     }
 
+    public void openSignInPage() {
+        Intent intentOpenSignInPage = new Intent(this, SignInPage.class);
+        startActivity(intentOpenSignInPage);
+    }
+
     public void openChooseLanguagePage(String fName, String lName, String email, String password) {
         Intent intentOpenChooseLanguagePage = new Intent(this, ChooseLanguagePage.class);
         intentOpenChooseLanguagePage
@@ -52,8 +57,11 @@ public class SupportExtensions extends AppCompatActivity {
         startActivity(intentOpenChooseLanguagePage);
     }
 
-    public void openHomeScreen() {
+    public void openHomeScreen(String email, String password) {
         Intent intentOpenHomeScreen = new Intent(this, HomeScreen.class);
+        intentOpenHomeScreen
+                .putExtra("EMAIL", email)
+                .putExtra("PASSWORD", password);
         startActivity(intentOpenHomeScreen);
     }
 
@@ -85,6 +93,11 @@ public class SupportExtensions extends AppCompatActivity {
     public void openProfileEdit(){
         Intent intentOpenProfileEdit = new Intent(this, ProfileEdit.class);
         startActivity(intentOpenProfileEdit);
+    }
+
+    public void openNewEvent(){
+        Intent intentOpenNewEvent = new Intent(this, NewEvent.class);
+        startActivity(intentOpenNewEvent);
     }
 
 }

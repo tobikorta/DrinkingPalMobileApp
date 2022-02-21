@@ -31,9 +31,11 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recViewHomeScreen"
         android:layout_width="350dp"
-        android:layout_height="563dp"
+        android:layout_height="534dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnProfileDashboard" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

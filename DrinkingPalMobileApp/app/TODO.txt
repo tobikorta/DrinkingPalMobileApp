@@ -1,0 +1,15 @@
+ - Load languages from backend using URL: /languages  in GET request
+        url returns list of Language Objects as is the Language class in the backend
+        look at method in Language service class
+
+ - get the list of bars from URL: /bars with GET and it returns a list of the Bar class in the backend app
+        so you must have a similar class to map to in ur app
+        the class currently doesn't have pictures, that will be added later
+
+ - prepare the form for creating events from the bar page, for backend communication use /events with POST
+        and send an event Object as is the Event class in the backend,
+        when creating, you don't have to send the creators id,
+        just include the token as the header (call me and i will explain)
+
+//DONE
+ - create SignIn page for new mobile phones

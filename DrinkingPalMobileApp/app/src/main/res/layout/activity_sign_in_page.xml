@@ -1,50 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.MainActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <Button
-        android:id="@+id/btnContinueToSignUpPage"
+    <EditText
+        android:id="@+id/inputUsername"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginTop="116dp"
-        android:hint="@string/create_account"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:hint="username"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"/>
 
-    <Button
-        android:id="@+id/btnContinueWithGoogle"
+    <EditText
+        android:id="@+id/inputPassword"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginTop="48dp"
-        android:hint="@string/continue_with_google"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:hint="@string/password"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnContinueToSignUpPage" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputUsername" />
 
     <Button
-        android:id="@+id/btnAlreadyHaveAccount"
+        android:id="@+id/btnContinueWithLogIn"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginTop="48dp"
-        android:hint="Already Have a Account"
-        app:layout_constraintTop_toBottomOf="@+id/btnContinueWithGoogle"
+        android:text="Continue to Dashboard"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        app:layout_constraintTop_toBottomOf="@+id/inputPassword"  />
 </androidx.constraintlayout.widget.ConstraintLayout>
