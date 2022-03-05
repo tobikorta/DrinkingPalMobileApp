@@ -2,9 +2,11 @@
 
     <string-array name="title_bar">
         <item>Title of BAR</item>
+        <item>Title of BAR</item>
     </string-array>
     <string-array name="description">
         <item>Description</item>
+        <item>Title of BAR</item>
     </string-array>
 
     <string name="app_name">drinkingPalApp</string>

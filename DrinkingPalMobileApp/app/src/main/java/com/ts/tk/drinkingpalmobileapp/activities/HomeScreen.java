@@ -1,19 +1,23 @@
 package com.ts.tk.drinkingpalmobileapp.activities;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+import com.android.volley.Request;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.ts.tk.drinkingpalmobileapp.R;
+import com.ts.tk.drinkingpalmobileapp.dtos.Bar;
 import com.ts.tk.drinkingpalmobileapp.models.AppRoomDatabase;
 import com.ts.tk.drinkingpalmobileapp.models.RecViewBarsAdapter;
+import com.ts.tk.drinkingpalmobileapp.restServices.Constants;
+import com.ts.tk.drinkingpalmobileapp.restServices.RestUtil;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 
 public class HomeScreen extends SupportExtensions {
@@ -22,7 +26,7 @@ public class HomeScreen extends SupportExtensions {
     RecyclerView recyclerView;
 
     String s1[], s2[];
-    int images[] = {R.drawable.bild_mvv_paris};
+    int images[] = {R.drawable.bild_mvv_paris, R.drawable.bild_mvv_paris};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,9 +45,11 @@ public class HomeScreen extends SupportExtensions {
         s1 = getResources().getStringArray(R.array.title_bar);
         s2 = getResources().getStringArray(R.array.description);
 
-        RecViewBarsAdapter recViewBarsAdapter = new RecViewBarsAdapter(this, s1, s2, images);
+        RecViewBarsAdapter recViewBarsAdapter = new RecViewBarsAdapter(this, new String[0], new String[0], new Long[0]);
         recyclerView.setAdapter(recViewBarsAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        getBars(recViewBarsAdapter);
 
 //        FloatingActionButton fab = findViewById(R.id.fab);
 //        fab.setOnClickListener(new View.OnClickListener() {
@@ -55,6 +61,23 @@ public class HomeScreen extends SupportExtensions {
 //        });
 
         AppRoomDatabase db = Room.databaseBuilder(getApplicationContext(), AppRoomDatabase.class, "Database 1").build();
+    }
+
+    private void getBars(RecViewBarsAdapter recViewBarsAdapter) {
+        String url = Constants.BASE_URL + "/bars";
+        JsonArrayRequest jsonObjectRequest = new JsonArrayRequest(Request.Method.GET, url, null, response -> {
+            List<Bar> result = Arrays.asList(RestUtil.convertJsonToObject(response.toString(), Bar[].class));
+            HomeScreen.this.runOnUiThread(() -> {
+                String[] barNames = result.stream().map(Bar::getName).toArray(String[]::new);
+                String[] descriptions = result.stream().map(Bar::getDescription).toArray(String[]::new);
+                Long[] ids = result.stream().map(Bar::getId).toArray(Long[]::new);
+                recViewBarsAdapter.setBarNames(barNames);
+                recViewBarsAdapter.setBarDescriptions(descriptions);
+                recViewBarsAdapter.setBarIds(ids);
+                recViewBarsAdapter.notifyDataSetChanged();
+            });
+        }, error -> error.printStackTrace());
+        RestUtil.sendJSONObjectRequest(jsonObjectRequest, this);
     }
 
 
