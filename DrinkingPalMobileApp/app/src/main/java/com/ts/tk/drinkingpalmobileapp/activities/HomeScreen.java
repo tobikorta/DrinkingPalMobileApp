@@ -15,6 +15,7 @@ import com.ts.tk.drinkingpalmobileapp.models.AppRoomDatabase;
 import com.ts.tk.drinkingpalmobileapp.models.RecViewBarsAdapter;
 import com.ts.tk.drinkingpalmobileapp.restServices.Constants;
 import com.ts.tk.drinkingpalmobileapp.restServices.RestUtil;
+import com.ts.tk.drinkingpalmobileapp.support.SupportExtensions;
 
 import java.util.Arrays;
 import java.util.List;

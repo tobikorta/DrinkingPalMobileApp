@@ -59,6 +59,8 @@ public class RecViewBarsAdapter extends RecyclerView.Adapter<RecViewBarsAdapter.
         return barIds.length;
     }
 
+
+
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView lblTitle, lblDescription;

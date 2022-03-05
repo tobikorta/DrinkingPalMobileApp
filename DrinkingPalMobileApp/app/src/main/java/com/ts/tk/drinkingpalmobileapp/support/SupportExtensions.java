@@ -1,4 +1,4 @@
-package com.ts.tk.drinkingpalmobileapp.activities;
+package com.ts.tk.drinkingpalmobileapp.support;
 /*
     Database docu AndroidStudio
     https://developer.android.com/training/data-storage/room#java
@@ -17,8 +17,10 @@ import com.ts.tk.drinkingpalmobileapp.activities.Events;
 import com.ts.tk.drinkingpalmobileapp.activities.FavouriteBars;
 import com.ts.tk.drinkingpalmobileapp.activities.HomeScreen;
 import com.ts.tk.drinkingpalmobileapp.activities.Messages;
+import com.ts.tk.drinkingpalmobileapp.activities.NewEvent;
 import com.ts.tk.drinkingpalmobileapp.activities.ProfileDashboard;
 import com.ts.tk.drinkingpalmobileapp.activities.ProfileEdit;
+import com.ts.tk.drinkingpalmobileapp.activities.SignInPage;
 import com.ts.tk.drinkingpalmobileapp.activities.SignUpPage;
 import com.ts.tk.drinkingpalmobileapp.activities.StatsHistory;
 

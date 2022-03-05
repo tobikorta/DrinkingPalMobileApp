@@ -5,6 +5,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.ts.tk.drinkingpalmobileapp.R;
+import com.ts.tk.drinkingpalmobileapp.support.SupportExtensions;
 
 import java.util.Objects;
 

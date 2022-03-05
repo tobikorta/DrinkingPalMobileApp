@@ -1,4 +1,6 @@
 package com.ts.tk.drinkingpalmobileapp.activities;
 
-public class NewEvent extends SupportExtensions{
+import com.ts.tk.drinkingpalmobileapp.support.SupportExtensions;
+
+public class NewEvent extends SupportExtensions {
 }

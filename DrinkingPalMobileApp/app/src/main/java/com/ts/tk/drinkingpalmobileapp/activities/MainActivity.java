@@ -5,6 +5,7 @@ import android.widget.Button;
 
 import com.ts.tk.drinkingpalmobileapp.R;
 import com.ts.tk.drinkingpalmobileapp.restServices.LanguageService;
+import com.ts.tk.drinkingpalmobileapp.support.SupportExtensions;
 
 
 public class MainActivity extends SupportExtensions {
