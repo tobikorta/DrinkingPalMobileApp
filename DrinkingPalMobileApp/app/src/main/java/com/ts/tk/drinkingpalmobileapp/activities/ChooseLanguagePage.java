@@ -1,5 +1,6 @@
 package com.ts.tk.drinkingpalmobileapp.activities;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -7,20 +8,32 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
+import com.android.volley.Request;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.ts.tk.drinkingpalmobileapp.R;
+import com.ts.tk.drinkingpalmobileapp.dtos.Language;
 import com.ts.tk.drinkingpalmobileapp.dtos.UserDto;
+import com.ts.tk.drinkingpalmobileapp.restServices.Constants;
+import com.ts.tk.drinkingpalmobileapp.restServices.RestUtil;
 import com.ts.tk.drinkingpalmobileapp.restServices.UserService;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
-public class ChooseLanguagePage extends SupportExtensions implements AdapterView.OnItemSelectedListener{
+public class ChooseLanguagePage extends SupportExtensions implements AdapterView.OnItemSelectedListener {
 
-    private Spinner spnSearchForLanguage;
 
+
+    private final UserService userService;
+
+    private List<Language> languages = new ArrayList<>();
     private Object chooseFirstLanguage;
-    private Object userInfo;
-
-    private UserService userService;
+    private  Spinner spinnerOne;
 
     public ChooseLanguagePage() {
         userService = new UserService(this);
@@ -35,10 +48,14 @@ public class ChooseLanguagePage extends SupportExtensions implements AdapterView
         Objects.requireNonNull(getSupportActionBar()).setTitle("ChooseLanguage");
         upArrow();
 
-        Spinner spinnerOne = findViewById(R.id.spnSearchForLanguageOne);
+        spinnerOne = findViewById(R.id.spnSearchForLanguageOne);
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.chooseLanguageSpinner, android.R.layout.simple_spinner_item);
+        List<String> languageNames = new ArrayList<>();
+
+        @SuppressLint("ResourceType") ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_item, languageNames);
+
+        getLanguages(adapter, languageNames);
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
@@ -49,28 +66,25 @@ public class ChooseLanguagePage extends SupportExtensions implements AdapterView
 
 
             Bundle bundle = getIntent().getExtras();
-            if(bundle != null){
+            if (bundle != null) {
                 spinnerOne.setOnItemSelectedListener(this);
-                String language = spinnerOne.getSelectedItem().toString();
+                String languageName = spinnerOne.getSelectedItem().toString();
 
                 String firstName = bundle.getString("FNAME");
                 String lastName = bundle.getString("LNAME");
                 String email = bundle.getString("EMAIL");
                 String password = bundle.getString("PASSWORD");
-                language = bundle.getString("");
-
-
+                Language language = this.languages.stream().filter(l -> l.getName().equals(languageName)).findFirst().orElse(null);
+                System.out.println(language);
 
                 UserDto user = UserDto.builder().firstName(firstName)
                         .lastName(lastName)
                         .email(email)
                         .password(password)
+                        .spokenLanguages(new HashSet<>(Collections.singletonList(language)))
                         .build();
 
                 userService.createUserAccount(user);
-
-                userInfo = firstName + lastName + email + password;
-                //System.out.println(userInfo);
 
                 openHomeScreen(email, password);
                 autoKeyboardRemover();
@@ -80,15 +94,29 @@ public class ChooseLanguagePage extends SupportExtensions implements AdapterView
 
     }
 
-        @Override
-        public void onItemSelected(AdapterView<?> adapter, View view, int position, long id) {
+    @Override
+    public void onItemSelected(AdapterView<?> adapter, View view, int position, long id) {
+        chooseFirstLanguage = adapter.getItemAtPosition(position);
+    }
 
-            chooseFirstLanguage = adapter.getItemAtPosition(position);
-        }
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
 
-        @Override
-        public void onNothingSelected(AdapterView<?> adapterView) {
+    }
 
+    private void getLanguages(ArrayAdapter<String> adapter, List<String> languageNamesList) {
+        String url = Constants.BASE_URL + "/languages";
+        JsonArrayRequest jsonObjectRequest = new JsonArrayRequest(Request.Method.GET, url, null, response -> {
+            List<Language> result = Arrays.asList(RestUtil.convertJsonToObject(response.toString(), Language[].class));
+
+            ChooseLanguagePage.this.runOnUiThread(() -> {
+                result.stream().map(Language::getName).forEach(languageNamesList::add);
+                adapter.notifyDataSetChanged();
+            });
+
+            this.languages = result;
+        }, error -> error.printStackTrace());
+        RestUtil.sendJSONObjectRequest(jsonObjectRequest, this);
     }
 
 }

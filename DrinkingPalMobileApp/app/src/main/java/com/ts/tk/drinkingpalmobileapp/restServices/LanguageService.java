@@ -21,15 +21,7 @@ public class LanguageService {
     }
 
     public void getAllLanguages() {
-        String url = Constants.BASE_URL + "/languages";
-        JsonArrayRequest jsonObjectRequest = new JsonArrayRequest(Request.Method.GET, url, null, response -> {
-            List<Language> result = Arrays.asList(RestUtil.convertJsonToObject(response.toString(), Language[].class));
 
-        }, error -> {
-            System.out.println("error but request sent ");
-
-        });
-        RestUtil.sendJSONObjectRequest(jsonObjectRequest, activity);
 
 
     }
