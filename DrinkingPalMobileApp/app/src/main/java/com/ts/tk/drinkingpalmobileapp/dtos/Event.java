@@ -7,6 +7,7 @@ public class Event {
     private Long id;
     private Date date;
     private Bar bar;
+    private UserData creator;
 
 
     public Long getId() {
@@ -31,5 +32,13 @@ public class Event {
 
     public void setBar(Bar bar) {
         this.bar = bar;
+    }
+
+    public UserData getCreator() {
+        return creator;
+    }
+
+    public void setCreator(UserData creator) {
+        this.creator = creator;
     }
 }

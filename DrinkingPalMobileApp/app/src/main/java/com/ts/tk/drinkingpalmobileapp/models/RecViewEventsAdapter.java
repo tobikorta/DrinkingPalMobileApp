@@ -10,8 +10,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
 import com.ts.tk.drinkingpalmobileapp.R;
 import com.ts.tk.drinkingpalmobileapp.dtos.Event;
+import com.ts.tk.drinkingpalmobileapp.restServices.Constants;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,12 +37,15 @@ public class RecViewEventsAdapter extends RecyclerView.Adapter<RecViewEventsAdap
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-
+        Event event = events.get(position);
+        holder.lblTitle.setText(event.getCreator().getFirstName() + " " + event.getCreator().getLastName());
+        holder.lblDescription.setText("At : " + event.getBar().getName());
+        Picasso.get().load(Constants.BASE_URL + "/bars/image/" + event.getBar().getId()).into(holder.imgBar);
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return events.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {

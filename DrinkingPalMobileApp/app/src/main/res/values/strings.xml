@@ -13,6 +13,7 @@
 
     <string name="first_name">first name</string>
     <string name="full_name">full name</string>
+    <string name="menu">Menu</string>
     <string name="sur_name">last name</string>
     <string name="email">email</string>
     <string name="password">password</string>
@@ -22,6 +23,7 @@
     <string name="favourite_bars">favourite bars</string>
     <string name="stats_history">stats / history</string>
     <string name="edit_profile">edit profile</string>
+    <string name="disconnect">Disconnect</string>
     <string name="search">search</string>
 
     <string name="english">english</string>

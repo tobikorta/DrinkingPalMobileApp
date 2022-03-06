@@ -4,6 +4,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ts.tk.drinkingpalmobileapp.support.SupportExtensions;
 
@@ -25,7 +26,8 @@ public class RestUtil {
 
     public static <T> T convertJsonToObject(String json, Class<T> clazz) {
         try {
-            ObjectMapper objectMapper = new ObjectMapper();
+            ObjectMapper objectMapper = new ObjectMapper()
+                    .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);;
             return objectMapper.readValue(json, clazz);
         } catch (IOException e) {
             e.printStackTrace();

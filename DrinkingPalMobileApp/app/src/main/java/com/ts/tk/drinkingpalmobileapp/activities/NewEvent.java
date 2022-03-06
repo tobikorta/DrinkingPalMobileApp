@@ -108,7 +108,6 @@ public class NewEvent extends SupportExtensions {
         }
 
         public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-            System.out.println("chosen time is : " + hourOfDay + ":" + minute);
             timeButton.setText(hourOfDay + ":" + minute);
             dateTimeContainer.hour = hourOfDay;
             dateTimeContainer.minute = minute;
@@ -150,13 +149,7 @@ public class NewEvent extends SupportExtensions {
 
         @RequiresApi(api = Build.VERSION_CODES.O)
         public Date getDate() {
-//            SimpleDateFormat formatter6 = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
-//            try {
-//                return formatter6.parse(day + "-" + month + "-" + year + " " + hour + ":" + minute + ":00");
-//            } catch (ParseException e) {
-//                return null;
-//            }
-            LocalDateTime localDateTime= LocalDateTime.of(year, month, day, hour, minute);
+            LocalDateTime localDateTime = LocalDateTime.of(year, month, day, hour, minute);
             return java.util.Date
                     .from(localDateTime.atZone(ZoneId.systemDefault())
                             .toInstant());

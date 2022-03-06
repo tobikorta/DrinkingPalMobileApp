@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface EventRepository extends JpaRepository<Event, Long> {
 
-    @Query("select e from Event e where e.date > current_timestamp ")
+    @Query("select e from Event e join fetch e.bar b join fetch e.creator c where e.date > current_timestamp ")
     List<Event> findUpcomingEvent();
 }
