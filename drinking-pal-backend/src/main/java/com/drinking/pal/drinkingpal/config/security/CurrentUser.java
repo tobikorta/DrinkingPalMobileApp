@@ -18,7 +18,6 @@ public class CurrentUser {
     private final UserRepository userRepository;
 
     public User get() {
-        System.out.println("entered get current user");
         if (user == null) {
             org.springframework.security.core.userdetails.User principal = (org.springframework.security.core.userdetails.User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
             this.user = userRepository.findByEmail(principal.getUsername())
