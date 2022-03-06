@@ -7,6 +7,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -19,7 +20,8 @@ public class Event {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private LocalDateTime date;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date date;
 
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private Bar bar;
