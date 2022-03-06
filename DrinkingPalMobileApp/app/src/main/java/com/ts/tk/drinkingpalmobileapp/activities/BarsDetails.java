@@ -1,5 +1,7 @@
 package com.ts.tk.drinkingpalmobileapp.activities;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -30,7 +32,7 @@ public class BarsDetails extends SupportExtensions {
 
         this.barNameTextView = findViewById(R.id.lblTitleBar);
         this.barDescriptionTextView = findViewById(R.id.lblDescription);
-        this.imageView =findViewById(R.id.imageView3);
+        this.imageView = findViewById(R.id.imageView3);
 
 
         Bundle bundle = getIntent().getExtras();
@@ -49,7 +51,13 @@ public class BarsDetails extends SupportExtensions {
             openActivity(NewEvent.class, extras);
         });
 
-
+        Button openmap = findViewById(R.id.btnGoToMaps);
+        openmap.setOnClickListener(v -> {
+             Uri gmmIntentUri = Uri.parse("geo:"+ bar.getLatitude() + "," + bar.getLongitude() + "?q=" + bar.getName().replaceAll("[ ]+", "+"));
+            Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+            mapIntent.setPackage("com.google.android.apps.maps");
+            startActivity(mapIntent);
+        });
 
     }
 

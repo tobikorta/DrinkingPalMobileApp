@@ -29,7 +29,7 @@ public class EventController {
     @PostMapping
     public ResponseEntity<?> createEvent(@RequestBody Event event) {
         eventService.saveEvent(event);
-        return new ResponseEntity<>(HttpStatus.CREATED);
+        return new ResponseEntity<>(event, HttpStatus.CREATED);
     }
 
     @PutMapping("/join/{id}")
