@@ -24,7 +24,13 @@ import com.ts.tk.drinkingpalmobileapp.activities.SignInPage;
 import com.ts.tk.drinkingpalmobileapp.activities.SignUpPage;
 import com.ts.tk.drinkingpalmobileapp.activities.StatsHistory;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+
 public class SupportExtensions extends AppCompatActivity {
+
+    private static final Map<String, String> emptyMap = Collections.emptyMap();
 
     public void autoKeyboardRemover(){
 
@@ -57,6 +63,18 @@ public class SupportExtensions extends AppCompatActivity {
                 .putExtra("EMAIL", email)
                 .putExtra("PASSWORD", password);
         startActivity(intentOpenChooseLanguagePage);
+    }
+    public void openActivity(Class<? extends SupportExtensions> activityClass) {
+        openActivity(activityClass, emptyMap);
+    }
+
+
+    public void openActivity(Class<? extends SupportExtensions> activityClass, Map<String, String> extras) {
+        Intent intent = new Intent(this, activityClass);
+        for (String key : extras.keySet()) {
+            intent.putExtra(key, extras.get(key));
+        }
+        startActivity(intent);
     }
 
     public void openHomeScreen(String email, String password) {

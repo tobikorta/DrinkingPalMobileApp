@@ -1,24 +1,19 @@
 package com.ts.tk.drinkingpalmobileapp.activities;
 
-import androidx.recyclerview.selection.ItemDetailsLookup;
+import android.os.Bundle;
 
-public class BarsDetails extends ItemDetailsLookup.ItemDetails<String> {
+import com.ts.tk.drinkingpalmobileapp.R;
+import com.ts.tk.drinkingpalmobileapp.support.SupportExtensions;
 
-    private int position;
-    private String selectionKey;
+import java.util.Objects;
 
-    public BarsDetails(int position, String selectionKey){
-        this.position = position;
-        this.selectionKey = selectionKey;
-    }
+public class BarsDetails extends SupportExtensions {
 
     @Override
-    public int getPosition(){
-        return position;
-    }
-
-    @Override
-    public String getSelectionKey(){
-        return selectionKey;
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_bars_details);
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Details");
+        upArrow();
     }
 }

@@ -12,19 +12,21 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
 import com.ts.tk.drinkingpalmobileapp.R;
+import com.ts.tk.drinkingpalmobileapp.activities.BarsDetails;
 import com.ts.tk.drinkingpalmobileapp.restServices.Constants;
+import com.ts.tk.drinkingpalmobileapp.support.SupportExtensions;
 
 public class RecViewBarsAdapter extends RecyclerView.Adapter<RecViewBarsAdapter.MyViewHolder> {
 
-    String barNames[], barDescriptions[];
-    Long barIds[];
-    Context ct;
+    private String[] barNames, barDescriptions;
+    private Long[] barIds;
+    private final Context context;
 
-    public RecViewBarsAdapter(Context context, String s1[], String s2[], Long img[]) {
-        ct = context;
-        barNames = s1;
-        barDescriptions = s2;
-        barIds = img;
+    public RecViewBarsAdapter(Context context, String[] barNames, String[] barDescriptions, Long[] barIds) {
+        this.context = context;
+        this.barNames = barNames;
+        this.barDescriptions = barDescriptions;
+        this.barIds = barIds;
     }
 
     public void setBarNames(String[] barNames) {
@@ -42,7 +44,7 @@ public class RecViewBarsAdapter extends RecyclerView.Adapter<RecViewBarsAdapter.
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(ct);
+        LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.rec_view_home_screen, parent, false);
         return new MyViewHolder(view);
     }
@@ -52,6 +54,11 @@ public class RecViewBarsAdapter extends RecyclerView.Adapter<RecViewBarsAdapter.
         holder.lblTitle.setText(barNames[position]);
         holder.lblDescription.setText(barDescriptions[position]);
         Picasso.get().load(Constants.BASE_URL + "/bars/image/" + barIds[position]).into(holder.imgBar);
+        final int index = position;
+        holder.itemView.setOnClickListener(v -> {
+            ((SupportExtensions)context).openActivity(BarsDetails.class);
+        });
+
     }
 
     @Override

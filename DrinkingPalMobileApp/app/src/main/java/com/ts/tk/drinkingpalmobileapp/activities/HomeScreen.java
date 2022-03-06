@@ -1,8 +1,13 @@
 package com.ts.tk.drinkingpalmobileapp.activities;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.Button;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
@@ -26,9 +31,6 @@ public class HomeScreen extends SupportExtensions {
     private Button buttonSearch;
     RecyclerView recyclerView;
 
-    String s1[], s2[];
-    int images[] = {R.drawable.bild_mvv_paris, R.drawable.bild_mvv_paris};
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,12 +45,26 @@ public class HomeScreen extends SupportExtensions {
 
         recyclerView = findViewById(R.id.recViewHomeScreen);
 
-        s1 = getResources().getStringArray(R.array.title_bar);
-        s2 = getResources().getStringArray(R.array.description);
-
         RecViewBarsAdapter recViewBarsAdapter = new RecViewBarsAdapter(this, new String[0], new String[0], new Long[0]);
         recyclerView.setAdapter(recViewBarsAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
+            @Override
+            public boolean onInterceptTouchEvent(@NonNull RecyclerView rv, @NonNull MotionEvent e) {
+
+                return false;
+            }
+
+            @Override
+            public void onTouchEvent(@NonNull RecyclerView rv, @NonNull MotionEvent e) {
+//                System.out.println("#######################################");
+            }
+
+            @Override
+            public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
+
+            }
+        });
 
         getBars(recViewBarsAdapter);
 
@@ -80,6 +96,4 @@ public class HomeScreen extends SupportExtensions {
         }, error -> error.printStackTrace());
         RestUtil.sendJSONObjectRequest(jsonObjectRequest, this);
     }
-
-
 }
