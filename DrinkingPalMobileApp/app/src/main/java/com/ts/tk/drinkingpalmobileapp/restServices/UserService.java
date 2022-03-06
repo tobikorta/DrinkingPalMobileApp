@@ -1,5 +1,8 @@
 package com.ts.tk.drinkingpalmobileapp.restServices;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+
 import com.android.volley.Request;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.ts.tk.drinkingpalmobileapp.support.SupportExtensions;
@@ -24,6 +27,11 @@ public class UserService {
             Value token = RestUtil.convertJsonToObject(response.toString(), Value.class);
             //TODO save token in DB
             assert token != null;
+            SharedPreferences sharedPref = activity.getSharedPreferences(
+                    Constants.SHARED_PREFS_KEY, Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putString("jwt", token.getValue());
+            editor.apply();
             Constants.TOKEN = token.getValue();
 
         }, error -> {

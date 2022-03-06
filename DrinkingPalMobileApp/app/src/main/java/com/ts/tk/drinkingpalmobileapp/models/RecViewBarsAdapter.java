@@ -13,32 +13,28 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.squareup.picasso.Picasso;
 import com.ts.tk.drinkingpalmobileapp.R;
 import com.ts.tk.drinkingpalmobileapp.activities.BarsDetails;
+import com.ts.tk.drinkingpalmobileapp.dtos.Bar;
 import com.ts.tk.drinkingpalmobileapp.restServices.Constants;
+import com.ts.tk.drinkingpalmobileapp.restServices.RestUtil;
 import com.ts.tk.drinkingpalmobileapp.support.SupportExtensions;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class RecViewBarsAdapter extends RecyclerView.Adapter<RecViewBarsAdapter.MyViewHolder> {
 
-    private String[] barNames, barDescriptions;
-    private Long[] barIds;
+    private List<Bar> bars = new ArrayList<>();
     private final Context context;
 
-    public RecViewBarsAdapter(Context context, String[] barNames, String[] barDescriptions, Long[] barIds) {
+    public RecViewBarsAdapter(Context context) {
         this.context = context;
-        this.barNames = barNames;
-        this.barDescriptions = barDescriptions;
-        this.barIds = barIds;
     }
 
-    public void setBarNames(String[] barNames) {
-        this.barNames = barNames;
-    }
-
-    public void setBarDescriptions(String[] barDescriptions) {
-        this.barDescriptions = barDescriptions;
-    }
-
-    public void setBarIds(Long[] barIds) {
-        this.barIds = barIds;
+    public void setBars(List<Bar> bars) {
+        this.bars = bars;
     }
 
     @NonNull
@@ -50,20 +46,21 @@ public class RecViewBarsAdapter extends RecyclerView.Adapter<RecViewBarsAdapter.
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.lblTitle.setText(barNames[position]);
-        holder.lblDescription.setText(barDescriptions[position]);
-        Picasso.get().load(Constants.BASE_URL + "/bars/image/" + barIds[position]).into(holder.imgBar);
-        final int index = position;
+    public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
+        holder.lblTitle.setText(bars.get(position).getName());
+        holder.lblDescription.setText(bars.get(position).getDescription());
+        Picasso.get().load(Constants.BASE_URL + "/bars/image/" + bars.get(position).getId()).into(holder.imgBar);
         holder.itemView.setOnClickListener(v -> {
-            ((SupportExtensions)context).openActivity(BarsDetails.class);
+            Map<String, Bar> extras = new HashMap<>();
+            extras.put("bar", bars.get(position));
+            ((SupportExtensions)context).openActivity(BarsDetails.class, extras);
         });
 
     }
 
     @Override
     public int getItemCount() {
-        return barIds.length;
+        return bars.size();
     }
 
 

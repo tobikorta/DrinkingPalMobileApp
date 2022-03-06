@@ -23,6 +23,9 @@
             android:name=".activities.BarsDetails"
             android:parentActivityName=".activities.HomeScreen"/>
         <activity
+                android:name=".activities.NewEvent"
+                android:parentActivityName=".activities.HomeScreen"/>
+        <activity
             android:name=".activities.HomeScreen" />
         <activity
             android:name=".activities.ProfileDashboard"

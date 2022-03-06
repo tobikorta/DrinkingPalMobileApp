@@ -24,6 +24,7 @@ import com.ts.tk.drinkingpalmobileapp.activities.SignInPage;
 import com.ts.tk.drinkingpalmobileapp.activities.SignUpPage;
 import com.ts.tk.drinkingpalmobileapp.activities.StatsHistory;
 
+import java.io.Serializable;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -69,7 +70,7 @@ public class SupportExtensions extends AppCompatActivity {
     }
 
 
-    public void openActivity(Class<? extends SupportExtensions> activityClass, Map<String, String> extras) {
+    public void openActivity(Class<? extends SupportExtensions> activityClass, Map<String, ? extends Serializable> extras) {
         Intent intent = new Intent(this, activityClass);
         for (String key : extras.keySet()) {
             intent.putExtra(key, extras.get(key));

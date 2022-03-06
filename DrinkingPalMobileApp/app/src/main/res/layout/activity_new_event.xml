@@ -15,24 +15,35 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <TextView
-        android:id="@+id/newEventName"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="108dp"
-        android:hint="name of the event"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageView" />
+    <Button
+            android:id="@+id/eventDateInput"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="50dp"
+            android:text="Date of the event"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageView"/>
 
-    <TextView
-        android:id="@+id/idOfEvent"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="48dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/newEventName"/>
+    <Button
+            android:id="@+id/eventTimeInput"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:text="Time of the event"
+            android:layout_marginTop="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/eventDateInput" />
+
+    <Button
+            android:id="@+id/saveEvent"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:text="Create Event"
+            android:layout_marginTop="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/eventTimeInput" />
 
 
 
