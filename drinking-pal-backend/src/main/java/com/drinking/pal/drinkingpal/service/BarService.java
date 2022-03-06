@@ -19,15 +19,15 @@ public class BarService {
     @PostConstruct
     void initializeData() {
         if (repository.findAll().isEmpty()) {
-            repository.save(Bar.builder().name("Puzzles").description("That's the puzzle").latitude(48.1288588).longitude(11.5421585).build());
-            repository.save(Bar.builder().name("Bar 2").description("That's the puzzle").longitude(48.1288588).latitude(11.5421585).build());
-            repository.save(Bar.builder().name("Bar 3").description("That's the puzzle").latitude(48.1288588).longitude(11.5421585).build());
-            repository.save(Bar.builder().name("Bar 4").description("That's the puzzle").latitude(48.1288588).longitude(11.5421585).build());
-            repository.save(Bar.builder().name("Bar 5").description("That's the puzzle").latitude(48.1288588).longitude(11.5421585).build());
-            repository.save(Bar.builder().name("Bar 6").description("That's the puzzle").latitude(48.1288588).longitude(11.5421585).build());
-            repository.save(Bar.builder().name("Bar 7").description("That's the puzzle").latitude(48.1288588).longitude(11.5421585).build());
-            repository.save(Bar.builder().name("Bar 8").description("That's the puzzle").latitude(48.1288588).longitude(11.5421585).build());
-            repository.save(Bar.builder().name("Bar 9").description("That's the puzzle").latitude(48.1288588).longitude(11.5421585).build());
+            repository.save(Bar.builder().name("True Brew Brewing Co").description("Bar Descrption").latitude(48.1288588).longitude(11.5421585).build());
+            repository.save(Bar.builder().name("Bar 2").description("Bar Descrption").longitude(48.1288588).latitude(11.5421585).build());
+            repository.save(Bar.builder().name("Bar 3").description("Bar Descrption").latitude(48.1288588).longitude(11.5421585).build());
+            repository.save(Bar.builder().name("Bar 4").description("Bar Descrption").latitude(48.1288588).longitude(11.5421585).build());
+            repository.save(Bar.builder().name("Bar 5").description("Bar Descrption").latitude(48.1288588).longitude(11.5421585).build());
+            repository.save(Bar.builder().name("Bar 6").description("Bar Descrption").latitude(48.1288588).longitude(11.5421585).build());
+            repository.save(Bar.builder().name("Bar 7").description("Bar Descrption").latitude(48.1288588).longitude(11.5421585).build());
+            repository.save(Bar.builder().name("Bar 8").description("Bar Descrption").latitude(48.1288588).longitude(11.5421585).build());
+            repository.save(Bar.builder().name("Bar 9").description("Bar Descrption").latitude(48.1288588).longitude(11.5421585).build());
         }
     }
 
