@@ -25,7 +25,6 @@ public class UserService {
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url, jsonObject, response -> {
             Value token = RestUtil.convertJsonToObject(response.toString(), Value.class);
-            //TODO save token in DB
             assert token != null;
             SharedPreferences sharedPref = activity.getSharedPreferences(
                     Constants.SHARED_PREFS_KEY, Context.MODE_PRIVATE);
@@ -39,8 +38,6 @@ public class UserService {
 
         });
         RestUtil.sendJSONObjectRequest(jsonObjectRequest, activity);
-
-
     }
 
 }

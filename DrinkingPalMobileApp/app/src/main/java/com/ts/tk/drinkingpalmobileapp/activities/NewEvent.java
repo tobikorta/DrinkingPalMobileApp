@@ -132,9 +132,9 @@ public class NewEvent extends SupportExtensions {
         }
 
         public void onDateSet(DatePicker view, int year, int month, int day) {
-            dateButton.setText(day + "." + month + "." + year);
+            dateButton.setText(((day< 10 ? "0" : "") + day) + "/" + (((month + 1) < 10 ? "0" : "") + (month + 1)) + "/" + year);
             dateTimeContainer.year = year;
-            dateTimeContainer.month = month;
+            dateTimeContainer.month = month +1;
             dateTimeContainer.day = day;
         }
     }

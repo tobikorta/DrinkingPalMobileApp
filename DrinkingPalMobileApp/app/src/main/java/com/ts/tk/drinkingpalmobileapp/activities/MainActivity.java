@@ -25,14 +25,9 @@ public class MainActivity extends SupportExtensions {
         }
 
         Button buttonOpenSignUpPage = findViewById(R.id.btnContinueToSignUpPage);
-        Button buttonContinueWithGoogle = findViewById(R.id.btnContinueWithGoogle);
         Button buttonAlreadyHaveAccount = findViewById(R.id.btnAlreadyHaveAccount);
 
         buttonOpenSignUpPage.setOnClickListener(view -> openSignUpPage());
-
-        buttonContinueWithGoogle.setOnClickListener(view -> {
-
-        });
 
         buttonAlreadyHaveAccount.setOnClickListener(view -> openSignInPage());
 
