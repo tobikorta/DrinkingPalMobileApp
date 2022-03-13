@@ -47,19 +47,19 @@ public class ProfileDashboard extends SupportExtensions {
         textFullName = findViewById(R.id.txtFullName);
 
         buttonContinueToEvents.setOnClickListener(view -> {
-            openEvents();
+            openActivity(Events.class);
         });
         buttonContinueToMessages.setOnClickListener(view -> {
-            openMessages();
+            openActivity(Messages.class);
         });
         buttonContinueToFavouriteBars.setOnClickListener(view -> {
-            openFavouriteBars();
+            openActivity(FavouriteBars.class);
         });
         buttonContinueToStatsHistory.setOnClickListener(view -> {
-            openStatsHistory();
+            openActivity(StatsHistory.class);
         });
         buttonContinueToProfileEdit.setOnClickListener(view -> {
-            openProfileEdit();
+            openActivity(ProfileEdit.class);
         });
         getCurrentUser();
 

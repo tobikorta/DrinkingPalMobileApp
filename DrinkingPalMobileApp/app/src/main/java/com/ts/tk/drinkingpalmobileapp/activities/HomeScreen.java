@@ -34,7 +34,7 @@ public class HomeScreen extends SupportExtensions {
 
         Button buttonContinueToDashboard = findViewById(R.id.btnProfileDashboard);
         buttonContinueToDashboard.setOnClickListener(view -> {
-            openProfileDashboard();
+            openActivity(ProfileDashboard.class);
         });
 
         recyclerView = findViewById(R.id.recViewHomeScreen);

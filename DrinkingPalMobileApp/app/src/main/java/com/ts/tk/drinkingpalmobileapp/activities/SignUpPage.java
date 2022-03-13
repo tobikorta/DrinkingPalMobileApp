@@ -1,18 +1,28 @@
 package com.ts.tk.drinkingpalmobileapp.activities;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 import com.ts.tk.drinkingpalmobileapp.R;
 import com.ts.tk.drinkingpalmobileapp.support.SupportExtensions;
 
+import java.io.Serializable;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 
 public class SignUpPage extends SupportExtensions {
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +32,7 @@ public class SignUpPage extends SupportExtensions {
 
         Objects.requireNonNull(getSupportActionBar()).setTitle("SignUpPage");
         upArrow();
+
 
         EditText inputFirstName = findViewById(R.id.inputFirstName);
         EditText inputLastName = findViewById(R.id.inputLastName);
@@ -36,7 +47,10 @@ public class SignUpPage extends SupportExtensions {
             String email = inputEmail.getText().toString();
             String password = inputPassword.getText().toString();
 
+            ;
+
             openChooseLanguagePage(firstName, lastName, email, password);
+//            openActivity(ChooseLanguagePage.class, new Map<String, Serializable> (firstName+ lastName + email + password));
             autoKeyboardRemover();
         });
 
@@ -48,5 +62,4 @@ public class SignUpPage extends SupportExtensions {
         });
 
     }
-
 }

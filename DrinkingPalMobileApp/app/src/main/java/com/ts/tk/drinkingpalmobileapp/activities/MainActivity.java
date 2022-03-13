@@ -27,9 +27,9 @@ public class MainActivity extends SupportExtensions {
         Button buttonOpenSignUpPage = findViewById(R.id.btnContinueToSignUpPage);
         Button buttonAlreadyHaveAccount = findViewById(R.id.btnAlreadyHaveAccount);
 
-        buttonOpenSignUpPage.setOnClickListener(view -> openSignUpPage());
+        buttonOpenSignUpPage.setOnClickListener(view -> openActivity(SignUpPage.class));
 
-        buttonAlreadyHaveAccount.setOnClickListener(view -> openSignInPage());
+        buttonAlreadyHaveAccount.setOnClickListener(view -> openActivity(HomeScreen.class));
 
         try {
            // UserService.getInstance(this).createUserAccount(UserDto.builder().lastName("Korta").email("tobikorta2@gmail.com").firstName("Tobi").build());
