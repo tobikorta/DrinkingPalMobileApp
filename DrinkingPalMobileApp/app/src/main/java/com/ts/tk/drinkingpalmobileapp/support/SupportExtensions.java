@@ -34,7 +34,6 @@ public class SupportExtensions extends AppCompatActivity {
     private static final Map<String, String> emptyMap = Collections.emptyMap();
 
     public void autoKeyboardRemover(){
-
         View view = this.getCurrentFocus();
         if (view != null) {
             InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);

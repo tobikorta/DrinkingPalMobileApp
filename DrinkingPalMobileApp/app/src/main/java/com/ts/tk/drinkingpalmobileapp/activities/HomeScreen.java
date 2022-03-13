@@ -23,7 +23,6 @@ import java.util.Objects;
 
 public class HomeScreen extends SupportExtensions {
 
-    private Button buttonSearch;
     RecyclerView recyclerView;
 
     @Override
@@ -45,7 +44,6 @@ public class HomeScreen extends SupportExtensions {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         getBars(recViewBarsAdapter);
-        AppRoomDatabase db = Room.databaseBuilder(getApplicationContext(), AppRoomDatabase.class, "Database 1").build();
     }
 
     private void getBars(RecViewBarsAdapter recViewBarsAdapter) {

@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
+
 import com.ts.tk.drinkingpalmobileapp.R;
 import com.ts.tk.drinkingpalmobileapp.support.SupportExtensions;
 
@@ -36,6 +38,13 @@ public class SignUpPage extends SupportExtensions {
 
             openChooseLanguagePage(firstName, lastName, email, password);
             autoKeyboardRemover();
+        });
+
+        ConstraintLayout layout = findViewById(R.id.signUpPageContainer);
+        layout.setOnClickListener(v -> {
+            System.out.println("sfvljdfbvkjldsnbdks, nvslkhdsijhdsh nnlidsjh dil jhldsk ");
+            autoKeyboardRemover();
+
         });
 
     }
