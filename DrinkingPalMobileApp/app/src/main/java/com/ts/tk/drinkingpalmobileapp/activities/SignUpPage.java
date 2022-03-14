@@ -56,7 +56,6 @@ public class SignUpPage extends SupportExtensions {
 
         ConstraintLayout layout = findViewById(R.id.signUpPageContainer);
         layout.setOnClickListener(v -> {
-            System.out.println("sfvljdfbvkjldsnbdks, nvslkhdsijhdsh nnlidsjh dil jhldsk ");
             autoKeyboardRemover();
 
         });

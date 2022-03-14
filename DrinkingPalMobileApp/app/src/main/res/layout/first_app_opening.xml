@@ -42,7 +42,7 @@
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginTop="48dp"
-        android:hint="Already Have a Account"
+        android:hint="@string/alr_have_account"
         app:layout_constraintTop_toBottomOf="@+id/btnContinueWithGoogle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

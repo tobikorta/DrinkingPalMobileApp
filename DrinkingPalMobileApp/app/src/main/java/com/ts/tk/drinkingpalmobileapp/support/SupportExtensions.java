@@ -49,6 +49,14 @@ public class SupportExtensions extends AppCompatActivity {
         startActivity(intentOpenChooseLanguagePage);
     }
 
+    public void openHomeScreen(String email, String password) {
+        Intent intentOpenHomeScreen = new Intent(this, HomeScreen.class);
+        intentOpenHomeScreen
+                .putExtra("EMAIL", email)
+                .putExtra("PASSWORD", password);
+        startActivity(intentOpenHomeScreen);
+    }
+
     public void openActivity(Class<? extends SupportExtensions> activityClass) {
         openActivity(activityClass, emptyMap);
     }
@@ -61,12 +69,6 @@ public class SupportExtensions extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void openHomeScreen(String email, String password) {
-        Intent intentOpenHomeScreen = new Intent(this, HomeScreen.class);
-        intentOpenHomeScreen
-                .putExtra("EMAIL", email)
-                .putExtra("PASSWORD", password);
-        startActivity(intentOpenHomeScreen);
-    }
+
 }
 
