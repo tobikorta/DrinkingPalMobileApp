@@ -26,12 +26,16 @@
 
             <TextView
                 android:id="@+id/lblDescription"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="215dp"
+                android:layout_height="18dp"
                 android:layout_marginBottom="10dp"
+                android:layout_marginEnd="60dp"
+                android:ellipsize="end"
+                android:maxLines="1"
                 android:text="@string/description"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/lblTitle" />
 
             <TextView

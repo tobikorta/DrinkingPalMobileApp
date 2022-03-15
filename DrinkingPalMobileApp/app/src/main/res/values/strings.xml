@@ -1,50 +1,36 @@
 <resources>
-
-    <string-array name="title_bar">
-        <item>Title of BAR</item>
-        <item>Title of BAR</item>
-    </string-array>
-    <string-array name="description">
-        <item>Description</item>
-        <item>Title of BAR</item>
-    </string-array>
-
+    <!-- AppName -->
     <string name="app_name">drinkingPalApp</string>
 
-    <string name="first_name">first name</string>
+    <!-- User -->
     <string name="full_name">full name</string>
-    <string name="username">username</string>
-    <string name="menu">Menu</string>
+    <string name="first_name">first name</string>
     <string name="sur_name">last name</string>
+    <string name="username">username</string>
     <string name="email">email</string>
     <string name="password">password</string>
+
+    <!-- Buttons -->
+    <string name="menu">Menu</string>
     <string name="goON">continue</string>
     <string name="events">events</string>
     <string name="messages">messages</string>
-    <string name="description">Description</string>
-    <string name="name_of_bar">Name of Bar</string>
     <string name="favourite_bars">favourite bars</string>
     <string name="stats_history">stats / history</string>
     <string name="edit_profile">edit profile</string>
     <string name="disconnect">Disconnect</string>
     <string name="search">search</string>
-    <string name="pic_of_bar">picture of bar</string>
     <string name="date_of_event">Date of the event</string>
     <string name="time_of_event">Time of the event</string>
-    <string name="ctn_to_dashboard">Continue to Dashboard</string>
-    <string name="alr_have_account">Already Have an Account</string>
-
-
-    <string name="english">english</string>
-    <string name="german">german</string>
-    <string name="mandarin">mandarin</string>
-    <string name="spanish">spanish</string>
-    <string name="portuguese">portuguese</string>
-    <string name="french">french</string>
+    <string name="pic_of_bar">picture of bar</string>
     <string name="create_account">create account</string>
     <string name="create_event">create event</string>
     <string name="go_to_maps">go to maps</string>
     <string name="continue_with_google">continue with google</string>
+    <string name="ctn_to_dashboard">Continue to Dashboard</string>
+    <string name="alr_have_account">Already Have an Account</string>
 
-    <string-array name="chooseLanguageSpinner"></string-array>
+    <!-- TextViews -->
+    <string name="description">Description</string>
+    <string name="name_of_bar">Name of Bar</string>
 </resources>
